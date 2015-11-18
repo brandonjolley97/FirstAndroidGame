@@ -103,4 +103,34 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:text="O"
+        android:id="@+id/oButton"
+        android:layout_below="@+id/bottomLeftButton"
+        android:layout_alignLeft="@+id/bottomLeftButton"
+        android:layout_alignStart="@+id/bottomLeftButton"
+        android:layout_marginTop="37dp"
+        android:textSize="30dp" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:text="X"
+        android:id="@+id/xButton"
+        android:layout_alignTop="@+id/oButton"
+        android:layout_alignLeft="@+id/bottomRightButton"
+        android:layout_alignStart="@+id/bottomRightButton"
+        android:textSize="30dp" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:text="Clear"
+        android:id="@+id/clearButton"
+        android:layout_alignTop="@+id/oButton"
+        android:layout_toRightOf="@+id/oButton"
+        android:layout_toEndOf="@+id/oButton" />
 </RelativeLayout>

@@ -2,14 +2,16 @@ package ctec.firstandroidgame;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.*;
 import android.view.View;
+import android.content.Intent;
 
 
 public class GameActivity extends AppCompatActivity
 {
+    private Button clearButton;
+    private Button oButton;
+    private Button xButton;
     private Button topLeftButton;
     private Button topMiddleButton;
     private Button topRightButton;
@@ -20,6 +22,7 @@ public class GameActivity extends AppCompatActivity
     private Button bottomMiddleButton;
     private Button bottomRightButton;
     private TextView gameTitleView;
+    int ticTacValue = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,6 +30,9 @@ public class GameActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        clearButton = (Button) findViewById(R.id.clearButton);
+        oButton = (Button) findViewById(R.id.oButton);
+        xButton = (Button) findViewById(R.id.xButton);
         topLeftButton = (Button) findViewById(R.id.topLeftButton);
         topMiddleButton = (Button) findViewById(R.id.topMiddleButton);
         topRightButton = (Button) findViewById(R.id.topRightButton);
@@ -48,7 +54,14 @@ public class GameActivity extends AppCompatActivity
         {
             public void onClick(View currentView)
             {
-
+                if(ticTacValue == 1)
+                {
+                    topLeftButton.setText("O");
+                }
+                else if(ticTacValue == 2)
+                {
+                    topLeftButton.setText("X");
+                }
             }
 
         });
@@ -57,7 +70,14 @@ public class GameActivity extends AppCompatActivity
         {
             public void onClick(View currentView)
             {
-
+                if(ticTacValue == 1)
+                {
+                    topMiddleButton.setText("O");
+                }
+                else if(ticTacValue == 2)
+                {
+                    topMiddleButton.setText("X");
+                }
             }
 
         });
@@ -66,7 +86,14 @@ public class GameActivity extends AppCompatActivity
         {
             public void onClick(View currentView)
             {
-
+                if(ticTacValue == 1)
+                {
+                    topRightButton.setText("O");
+                }
+                else if(ticTacValue == 2)
+                {
+                    topRightButton.setText("X");
+                }
             }
 
         });
@@ -75,7 +102,14 @@ public class GameActivity extends AppCompatActivity
         {
             public void onClick(View currentView)
             {
-
+                if(ticTacValue == 1)
+                {
+                    middleLeftButton.setText("O");
+                }
+                else if(ticTacValue == 2)
+                {
+                    middleLeftButton.setText("X");
+                }
             }
 
         });
@@ -84,7 +118,14 @@ public class GameActivity extends AppCompatActivity
         {
             public void onClick(View currentView)
             {
-
+                if(ticTacValue == 1)
+                {
+                    middleButton.setText("O");
+                }
+                else if(ticTacValue == 2)
+                {
+                    middleButton.setText("X");
+                }
             }
 
         });
@@ -93,7 +134,14 @@ public class GameActivity extends AppCompatActivity
         {
             public void onClick(View currentView)
             {
-
+                if(ticTacValue == 1)
+                {
+                    middleRightButton.setText("O");
+                }
+                else if(ticTacValue == 2)
+                {
+                    middleRightButton.setText("X");
+                }
             }
 
         });
@@ -102,7 +150,14 @@ public class GameActivity extends AppCompatActivity
         {
             public void onClick(View currentView)
             {
-
+                if(ticTacValue == 1)
+                {
+                    bottomLeftButton.setText("O");
+                }
+                else if(ticTacValue == 2)
+                {
+                    bottomLeftButton.setText("X");
+                }
             }
 
         });
@@ -111,7 +166,14 @@ public class GameActivity extends AppCompatActivity
         {
             public void onClick(View currentView)
             {
-
+                if(ticTacValue == 1)
+                {
+                    bottomMiddleButton.setText("O");
+                }
+                else if(ticTacValue == 2)
+                {
+                    bottomMiddleButton.setText("X");
+                }
             }
 
         });
@@ -120,10 +182,54 @@ public class GameActivity extends AppCompatActivity
         {
             public void onClick(View currentView)
             {
+                if(ticTacValue == 1)
+                {
+                    bottomRightButton.setText("O");
+                }
+                else if(ticTacValue == 2)
+                {
+                    bottomRightButton.setText("X");
+                }
+            }
+
+        });
+
+        oButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View currentView)
+            {
+                ticTacValue = 1;
+            }
+
+        });
+
+        xButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View currentView)
+            {
+                ticTacValue = 2;
+            }
+
+        });
+
+        clearButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View currentView)
+            {
+                bottomRightButton.setText("-");
+                bottomLeftButton.setText("-");
+                bottomMiddleButton.setText("-");
+                topRightButton.setText("-");
+                topLeftButton.setText("-");
+                topMiddleButton.setText("-");
+                middleRightButton.setText("-");
+                middleLeftButton.setText("-");
+                middleButton.setText("-");
 
             }
 
         });
+
 
 
 
